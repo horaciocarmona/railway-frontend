@@ -1,8 +1,15 @@
 // import {getFirestore,collection, getDocs} from "firebase/firestore"
 
     const productosApi = async() => {
+        let urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+`/api/products`
+        } else {
+            urlConection=`http://localhost:8080/api/products`
+        }
 
-        const productosPromise = await (fetch(`http://localhost:8080/api/products`, {
+        const productosPromise = await (fetch(urlConection, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -26,11 +33,19 @@
             })
         )    
         console.log('productopromise',productosPromise)    
+        urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+`/`
+        } else {
+            urlConection="http://localhost:8080/"
+        }
+
         const productos = productosPromise.map((productos) => ({
                  id:productos._id,
                  category:productos.category,
                  nombre:productos.title,
-                 imagen:"http://localhost:8080/"+productos.thumpbnail,
+                 imagen:urlConection+productos.thumpbnail,
                  precio:productos.price,
                  stockProducto:productos.stock,
                  idDoc:productos.code
@@ -83,7 +98,15 @@
         //         return listProducts;
         //     })
         //)
-        const unProductoPromise = await (fetch(`http://localhost:8080/api/products/${id}`, {
+        let urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+`/api/products/${id}`
+        } else {
+            urlConection=`http://localhost:8080/api/products/${id}`
+        }
+
+        const unProductoPromise = await (fetch(urlConection, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -105,12 +128,19 @@
             })
         )    
         console.log('unproductopromise',unProductoPromise)    
+        urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+`/`
+        } else {
+            urlConection="http://localhost:8080/"
+        }
       
          const productos = unProductoPromise.map((productos) => ({
                  id:productos._id,
                  category:productos.category,
                  nombre:productos.title,
-                 imagen:"http://localhost:8080/"+productos.thumpbnail,
+                 imagen:urlConection+productos.thumpbnail,
                  precio:productos.price,
                  stockProducto:productos.stock,
                  idDoc:productos.code
