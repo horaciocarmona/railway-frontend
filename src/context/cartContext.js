@@ -218,7 +218,9 @@ export default function CartProvider ({children}) {
                urlConection=process.env.REACT_APP_BACKEND_URL+`/api/carts`
            } else {
                urlConection=`http://localhost:8080/api/carts`
-           }
+               console.log("token",token)
+            }
+            console.log("urlconection carts",urlConection)
 
            fetch(urlConection, {
            method: "GET",

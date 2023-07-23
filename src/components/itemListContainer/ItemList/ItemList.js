@@ -9,7 +9,7 @@ import {useContext} from "react"
 import {cartContext} from "../../../context/cartContext"
 
 const ItemList=()=>{
-    const httpbackend=process.env.REACT_APP_BACKEND_URL
+//    const httpbackend=process.env.REACT_APP_BACKEND_URL
     const [filter,setFilter]=useState("");
     const [listProducts,setListadoProductos]=useState([]);
     const {categoria}=useParams();
