@@ -57,8 +57,17 @@ export const Login = () => {
     const consultarResetForm = (e) => {
         const datosFormulario = new FormData(datFormReset.current) //Pasar de HTML a Objeto Iterable
         const clienteReset = Object.fromEntries(datosFormulario) //Pasar de objeto iterable a objeto simple
+        let urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+'/api/password/reset'
+        } else {
+            urlConection='http://localhost:8080/api/password/reset'
+
+        }
+
         e.preventDefault()
-        fetch('http://localhost:8080/api/password/reset', {
+        fetch(urlConection, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

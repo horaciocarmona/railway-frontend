@@ -39,7 +39,7 @@ export default function CartProvider ({children}) {
     const isInCart=(id) =>{ return id !== undefined ? getFromCart(id):undefined};
     const emptyToCart = () => {
         let cId="" 
-        const token = document.cookie.slice(6);
+//        const token = document.cookie.slice(6);
         console.log("token",token)
         let urlConection=""
         if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
@@ -159,7 +159,7 @@ export default function CartProvider ({children}) {
             const productoExistente=getFromCart(obj.id); 
             productoExistente.cantidad+=obj.cantidad; 
             productoExistente.stockProducto-=obj.cantidad; 
-            const token = document.cookie.slice(6);
+//            const token = document.cookie.slice(6);
             console.log("token",token)
             let urlConection=""
             if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
@@ -225,7 +225,7 @@ export default function CartProvider ({children}) {
      
        } else {
            console.log("nuevo producto "+obj.descripcionProducto);
-           const token = document.cookie.slice(6);
+//           const token = document.cookie.slice(6);
            console.log("token",token)
            let urlConection=""
            if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
@@ -328,7 +328,7 @@ export default function CartProvider ({children}) {
             console.log("existe, se elimina ");
             console.log(totalCantidadCarrito)
             console.log(obj.cantidad);
-            const token = document.cookie.slice(6);
+//            const token = document.cookie.slice(6);
             console.log("token",token)
             let urlConection=""
             if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
@@ -402,7 +402,7 @@ export default function CartProvider ({children}) {
     const buyToCart=(cart)=>{
         // Actualizo ordenes y Stock 
         let cId="" 
-        const token = document.cookie.slice(6);
+//        const token = document.cookie.slice(6);
         console.log("token",token)
         let urlConection=""
         if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0

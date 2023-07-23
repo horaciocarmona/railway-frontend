@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { getCookieValue} from "../../context/cartContext"
+const token = getCookieValue('token');
 
 export const Users= () => {
    const [mensaje, setMensaje] = useState('')
@@ -25,6 +27,7 @@ export const Users= () => {
     }
 
     const updateUserRole = () => {
+
         const token = document.cookie.slice(6)
         let urlConection=""
         if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
@@ -63,7 +66,7 @@ export const Users= () => {
     }    
 
     const getUserRole = () => {
-        const token = document.cookie.slice(6)
+//        const token = document.cookie.slice(6)
         let urlConection=""
         if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
         ) {
@@ -103,7 +106,7 @@ export const Users= () => {
     };
 
     const deleteUser = () => {
-        const token = document.cookie.slice(6)
+//        const token = document.cookie.slice(6)
         let urlConection=""
         if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
         ) {

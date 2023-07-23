@@ -1,5 +1,8 @@
 import { useRef } from "react"
 import { useState } from "react"
+import { getCookieValue} from "../../context/cartContext"
+const token = getCookieValue('token');
+
 //import {useCookies} from "react"
 export const Logout = () => {
     const [mensaje, setMensaje] = useState('')
@@ -9,7 +12,7 @@ export const Logout = () => {
         e.preventDefault()
 //        const datosFormulario = new FormData(datForm.current) //Pasar de HTML a Objeto Iterable
 //        const cliente = Object.fromEntries(datosFormulario) //Pasar de objeto iterable a objeto simple
-        const token = document.cookie.slice(6)
+//        const token = document.cookie.slice(6)
         let urlConection=""
         if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
         ) {
