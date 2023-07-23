@@ -8,6 +8,7 @@
         } else {
             urlConection=`http://localhost:8080/api/products`
         }
+        console.log('urlconection products',urlConection);
 
         const productosPromise = await (fetch(urlConection, {
             method: "GET",
@@ -33,7 +34,7 @@
             })
         )    
         console.log('productopromise',productosPromise)    
-        urlConection=""
+//        urlConection=""
         if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
         ) {
             urlConection=process.env.REACT_APP_BACKEND_URL+`/`
