@@ -6,7 +6,7 @@
         "buildCommand": "npm install && npm run build",
         "startCommand": "npm run start"
       },
-      "CI" : false
+      "env" :{"CI":false} 
     }
   }
   
