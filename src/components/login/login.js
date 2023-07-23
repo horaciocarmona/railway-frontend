@@ -28,6 +28,7 @@ export const Login = () => {
                  console.log(data.token)
                 if (data.token){
                     setMensaje("ingreso correctamente")
+                    console.log(user)
                     setUser(JSON.stringify(cliente))
                 }
         })

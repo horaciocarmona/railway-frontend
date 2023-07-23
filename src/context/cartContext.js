@@ -376,24 +376,24 @@ export default function CartProvider ({children}) {
 //        stockToItems(cart);
     }   
 
-     const stockToItems=(cartItems)=>{
-        console.log("cartitimens");
-        console.log(cartItems)
+    //  const stockToItems=(cartItems)=>{
+    //     console.log("cartitimens");
+    //     console.log(cartItems)
 
-        // const db=getFirestore();
-        console.log("cartitimens");
-        console.log(cartItems)
+    //     // const db=getFirestore();
+    //     console.log("cartitimens");
+    //     console.log(cartItems)
 
-        cartItems.map((producto) =>{ 
+    //     cartItems.map((producto) =>{ 
 
-            // const itemDoc=doc(db,"items",producto.idDoc);    
-            console.log("itemdoc");
-            // console.log(itemDoc)
+    //         // const itemDoc=doc(db,"items",producto.idDoc);    
+    //         console.log("itemdoc");
+    //         // console.log(itemDoc)
     
-            // updateDoc(itemDoc,{stockProducto:producto.stockProducto});
+    //         // updateDoc(itemDoc,{stockProducto:producto.stockProducto});
     
-        });  
-    }   
+    //     });  
+    // }   
 
      return (
         <cartContext.Provider value={{cart,user,addToCart,isInCart,emptyToCart,getToCart,removeToCart,totalCantidadCarrito,totalImporteCarrito,getFromCart,buyToCart}}>

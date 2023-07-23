@@ -4,7 +4,7 @@ import Item from "../../itemListContainer/ItemList/item/item"
 import productosApi from "../../ApiRest/productosApi"
 import {useParams} from "react-router-dom"
 // import {doc,getFirestore,collection, getDocs,query,where,addDoc,updateDoc,writeBatch} from "firebase/firestore"
-import Button from 'react-bootstrap/Button';
+//import Button from 'react-bootstrap/Button';
 import {useContext} from "react"
 import {cartContext} from "../../../context/cartContext"
 
