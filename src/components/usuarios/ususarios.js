@@ -26,7 +26,16 @@ export const Users= () => {
 
     const updateUserRole = () => {
         const token = document.cookie.slice(6)
-        fetch(`http://localhost:8080/api/users/${userId}`, {
+        let urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+`/api/users/${userId}`
+        } else {
+            urlConection=`http://localhost:8080/api/users/${userId}`
+
+        }
+
+        fetch(urlConection, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -55,7 +64,16 @@ export const Users= () => {
 
     const getUserRole = () => {
         const token = document.cookie.slice(6)
-        fetch(`http://localhost:8080/api/users/${userId}`, {
+        let urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+`/api/users/${userId}`
+        } else {
+            urlConection=`http://localhost:8080/api/users/${userId}`
+
+        }
+
+        fetch(urlConection, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -86,7 +104,16 @@ export const Users= () => {
 
     const deleteUser = () => {
         const token = document.cookie.slice(6)
-        fetch(`http://localhost:8080/api/users/${userId}`, {
+        let urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+`/api/users/${userId}`
+        } else {
+            urlConection=`http://localhost:8080/api/users/${userId}`
+
+        }
+
+        fetch(urlConection, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",

@@ -26,7 +26,16 @@ export default function CartProvider ({children}) {
         let cId="" 
         const token = document.cookie.slice(6);
         console.log("token",token)
-        fetch(`http://localhost:8080/api/carts`, {
+        let urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+`/api/carts`
+        } else {
+            urlConection=`http://localhost:8080/api/carts`
+
+        }
+
+        fetch(urlConection, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -39,7 +48,16 @@ export default function CartProvider ({children}) {
                  if (data[0]._id.length > 0) {    
                      cId=data[0]._id
                      console.log("cid",cId)
-                     fetch(`http://localhost:8080/api/carts/${cId}`, {
+                     let urlConection=""
+                     if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+                     ) {
+                         urlConection=process.env.REACT_APP_BACKEND_URL+`/api/carts/${cId}`
+                     } else {
+                         urlConection=`http://localhost:8080/api/carts/${cId}`
+             
+                     }
+             
+                     fetch(urlConection, {
                          method: "DELETE",
                          headers: {
                              "Content-Type": "application/json",
@@ -75,7 +93,15 @@ export default function CartProvider ({children}) {
         setCart([]);
         const token = document.cookie.slice(6);
         console.log("token",token);
-        fetch(`http://localhost:8080/api/carts`, {
+        let urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+`/api/carts`
+        } else {
+            urlConection=`http://localhost:8080/api/carts`
+        }
+
+        fetch(urlConection, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -120,7 +146,15 @@ export default function CartProvider ({children}) {
             productoExistente.stockProducto-=obj.cantidad; 
             const token = document.cookie.slice(6);
             console.log("token",token)
-            fetch(`http://localhost:8080/api/carts`, {
+            let urlConection=""
+            if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+            ) {
+                urlConection=process.env.REACT_APP_BACKEND_URL+`/api/carts`
+            } else {
+                urlConection=`http://localhost:8080/api/carts`
+            }
+    
+            fetch(urlConection, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -133,7 +167,15 @@ export default function CartProvider ({children}) {
                  if (data[0]._id.length > 0) {    
                      cId=data[0]._id
                      console.log("cid",cId)
-                     fetch(`http://localhost:8080/api/carts/${cId}/products/${obj.id}`, {
+                     let urlConection=""
+                     if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+                     ) {
+                         urlConection=process.env.REACT_APP_BACKEND_URL+`/api/carts/${cId}/products/${obj.id}`
+                     } else {
+                         urlConection=`http://localhost:8080/api/carts/${cId}/products/${obj.id}`
+                     }
+         
+                     fetch(urlConection, {
                          method: "PUT",
                          headers: {
                              "Content-Type": "application/json",
@@ -170,7 +212,15 @@ export default function CartProvider ({children}) {
            console.log("nuevo producto "+obj.descripcionProducto);
            const token = document.cookie.slice(6);
            console.log("token",token)
-           fetch(`http://localhost:8080/api/carts`, {
+           let urlConection=""
+           if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+           ) {
+               urlConection=process.env.REACT_APP_BACKEND_URL+`/api/carts`
+           } else {
+               urlConection=`http://localhost:8080/api/carts`
+           }
+
+           fetch(urlConection, {
            method: "GET",
            headers: {
             "Content-Type": "application/json",
@@ -183,7 +233,15 @@ export default function CartProvider ({children}) {
                 if (data[0]._id.length > 0) {    
                     cId=data[0]._id
                     console.log("cid",cId)
-                    fetch(`http://localhost:8080/api/carts/${cId}/products/${obj.id}`, {
+                    let urlConection=""
+                    if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+                    ) {
+                        urlConection=process.env.REACT_APP_BACKEND_URL+`/api/carts/${cId}/products/${obj.id}`
+                    } else {
+                        urlConection=`http://localhost:8080/api/carts/${cId}/products/${obj.id}`
+                    }
+         
+                    fetch(urlConection, {
                         method: "PUT",
                         headers: {
                           "Content-Type": "application/json",
@@ -255,7 +313,15 @@ export default function CartProvider ({children}) {
             console.log(obj.cantidad);
             const token = document.cookie.slice(6);
             console.log("token",token)
-            fetch(`http://localhost:8080/api/carts`, {
+            let urlConection=""
+            if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+            ) {
+                urlConection=process.env.REACT_APP_BACKEND_URL+`/api/carts`
+            } else {
+                urlConection=`http://localhost:8080/api/carts`
+            }
+
+            fetch(urlConection, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -268,7 +334,15 @@ export default function CartProvider ({children}) {
                  if (data[0]._id.length > 0) {    
                      cId=data[0]._id
                      console.log("cid",cId)
-                     fetch(`http://localhost:8080/api/carts/${cId}/products/${obj.id}`, {
+                     let urlConection=""
+                     if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+                     ) {
+                         urlConection=process.env.REACT_APP_BACKEND_URL+`/api/carts/${cId}/products/${obj.id}`
+                     } else {
+                         urlConection=`http://localhost:8080/api/carts/${cId}/products/${obj.id}`
+                     }
+         
+                     fetch(urlConection, {
                          method: "DELETE",
                          headers: {
                              "Content-Type": "application/json",
@@ -313,7 +387,15 @@ export default function CartProvider ({children}) {
         let cId="" 
         const token = document.cookie.slice(6);
         console.log("token",token)
-        fetch(`http://localhost:8080/api/carts`, {
+        let urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+`/api/carts`
+        } else {
+            urlConection=`http://localhost:8080/api/carts`
+        }
+
+        fetch(urlConection, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -326,7 +408,14 @@ export default function CartProvider ({children}) {
              if (data[0]._id.length > 0) {    
                  cId=data[0]._id
                  console.log("cid",cId)
-                 fetch(`http://localhost:8080/api/carts/${cId}/purchase`, {
+                 let urlConection=""
+                 if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+                 ) {
+                     urlConection=process.env.REACT_APP_BACKEND_URL+`/api/carts/${cId}/purchase`
+                 } else {
+                     urlConection=`http://localhost:8080/api/carts/${cId}/purchase`
+                 }
+                 fetch(urlConection, {
                      method: "POST",
                      headers: {
                          "Content-Type": "application/json",

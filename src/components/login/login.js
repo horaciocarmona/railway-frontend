@@ -14,7 +14,20 @@ export const Login = () => {
         e.preventDefault()
         const datosFormulario = new FormData(datForm.current) //Pasar de HTML a Objeto Iterable
         const cliente = Object.fromEntries(datosFormulario) //Pasar de objeto iterable a objeto simple
-         fetch('http://localhost:8080/api/sessions/login', {
+        let urlConection=""
+        console.log('urlant',process.env.REACT_APP_BACKEND_URL)
+        console.log('urlant length',process.env.REACT_APP_BACKEND_URL.length)
+
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+'/api/sessions/login'
+
+        } else {
+            urlConection='http://localhost:8080/api/sessions/login'
+
+        }
+        console.log('urlconeccion',urlConection)
+        fetch(urlConection, {
              method: "POST",
              headers: {
                  "Content-Type": "application/json"

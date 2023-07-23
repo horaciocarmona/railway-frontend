@@ -11,8 +11,17 @@ export const Register = () => {
         e.preventDefault()
         const datosFormulario = new FormData(datForm.current) //Pasar de HTML a Objeto Iterable
         const cliente = Object.fromEntries(datosFormulario) //Pasar de objeto iterable a objeto simple
+        let urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+'/api/sessions/register'
+        } else {
+            urlConection='http://localhost:8080/api/sessions/register'
 
-         fetch('http://localhost:8080/api/sessions/register', {
+        }
+
+
+         fetch(urlConection, {
              method: "POST",
              headers: {
                  "Content-Type": "application/json"

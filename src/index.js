@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client'; 
+//import dtoenv from 'dotenv'
 import './index.css';
 // import reportWebVitals from './reportWebVitals';
 import reportWebVitals from './reportWebVitals';
@@ -16,6 +17,7 @@ import Router from './screens/itemListContainer/Router';
 //   appId: "1:487666492988:web:88e31732b13e45b4388539"
 // };
 // initializeApp(firebaseConfig);
+console.log('processenv',process.env.REACT_APP_BACKEND_URL);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

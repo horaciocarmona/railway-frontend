@@ -16,7 +16,15 @@ export const ResetPassword = () => {
 
         const clienteReset = Object.fromEntries(datosFormulario) //Pasar de objeto iterable a objeto simple
         e.preventDefault()
-        fetch('http://localhost:8080/api/password/change', {
+        let urlConection=""
+        if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
+        ) {
+            urlConection=process.env.REACT_APP_BACKEND_URL+'/api/password/change'
+        } else {
+            urlConection='http://localhost:8080/api/password/change'
+        }
+
+        fetch(urlConection, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

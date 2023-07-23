@@ -9,6 +9,7 @@ import {useContext} from "react"
 import {cartContext} from "../../../context/cartContext"
 
 const ItemList=()=>{
+    const httpbackend=process.env.REACT_APP_BACKEND_URL
     const [filter,setFilter]=useState("");
     const [listProducts,setListadoProductos]=useState([]);
     const {categoria}=useParams();
@@ -28,38 +29,37 @@ const ItemList=()=>{
         },[]);
 
     useEffect(()=>{setNumberCount(numberCount)},[numberCount]);
-    const sendOrder=()=>{
-        const order={
-            buyer: {email:"horacio@hotmail.com",name:"horacio",number:1,phone:"222-444"},
-            items:[{precioVentaUnitario:10,descripcionProducto:"aaaa",cantidad:1}],
-            total:100
-        }
-        // const db=getFirestore();
-        // const ordersCollections=collection(db,"ordersCollection");    
-        // addDoc(ordersCollections,order).then((id)=>{
-            // console.log(id);
-        // })    
-    }
+    // const sendOrder=()=>{
+    //     const order={
+    //         buyer: {email:"horacio@hotmail.com",name:"horacio",number:1,phone:"222-444"},
+    //         items:[{precioVentaUnitario:10,descripcionProducto:"aaaa",cantidad:1}],
+    //         total:100
+    //     }
+    //     // const db=getFirestore();
+    //     // const ordersCollections=collection(db,"ordersCollection");    
+    //     // addDoc(ordersCollections,order).then((id)=>{
+    //         // console.log(id);
+    //     // })    
+    // }
 
-    const updateOrder=()=>{
-        // const db=getFirestore();
-        // const orderDoc=doc(db,"ordersCollection","LZ9UkLqMS6PgW05sYyNX");    
-        // updateDoc(orderDoc,{total:200});
+    // const updateOrder=()=>{
+    //     // const db=getFirestore();
+    //     // const orderDoc=doc(db,"ordersCollection","LZ9UkLqMS6PgW05sYyNX");    
+    //     // updateDoc(orderDoc,{total:200});
            
-    }
+    // }
 
-    const batchOrders=()=>{
-        // const db=getFirestore();
-        // const batch=writeBatch(db);    
-        // const orderDoc1=doc(db,"ordersCollection","LZ9UkLqMS6PgW05sYyNX");
-        // const orderDoc2=doc(db,"ordersCollection","W5MK9JVd6RTjCfwxaFkA");
-        // batch.update(orderDoc1,{total:250});
-        // batch.set(orderDoc2,{field:"new field"});
-        // batch.commit();
-    }
+    // const batchOrders=()=>{
+    //     // const db=getFirestore();
+    //     // const batch=writeBatch(db);    
+    //     // const orderDoc1=doc(db,"ordersCollection","LZ9UkLqMS6PgW05sYyNX");
+    //     // const orderDoc2=doc(db,"ordersCollection","W5MK9JVd6RTjCfwxaFkA");
+    //     // batch.update(orderDoc1,{total:250});
+    //     // batch.set(orderDoc2,{field:"new field"});
+    //     // batch.commit();
+    // }
     
     return(
-
         <div className="Principalcontainer">
 
                 {/* <Button onClick={()=>{sendOrder()}}>send</Button>
