@@ -5,7 +5,7 @@
       "production": {
         "buildCommand": "npm install && npm run build",
         "startCommand": "npm run start",
-        "process.env.CI":false 
+        "CI":false 
       }
     }
   }
