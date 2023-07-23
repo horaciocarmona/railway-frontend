@@ -1,5 +1,6 @@
 import {createContext,useState} from "react";
 // import {doc,getFirestore,collection, getDocs,query,where,addDoc,updateDoc,writeBatch} from "firebase/firestore"
+const token = getCookieValue('token');
 
 export const cartContext = createContext({
     cart:[],
@@ -14,6 +15,20 @@ export const cartContext = createContext({
     totalImporteCarrito:0.00                                   
 
 }) //Cree el contexto, que seria como la caja "global" (de momento vacia) que voy a compartir entre los componentes
+
+export function getCookieValue(cookieName) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      // Si la cookie comienza con el nombre que buscamos
+      if (cookie.startsWith(`${cookieName}=`)) {
+        // Devolver el valor de la cookie
+        return cookie.substring(cookieName.length + 1);
+      }
+    }
+    // Si no se encuentra la cookie, devolver null o algún valor por defecto
+    return null;
+  }
 
 export default function CartProvider ({children}) {
     const [cart, setCart] = useState([]);
@@ -91,7 +106,7 @@ export default function CartProvider ({children}) {
 
     const getToCart = () => {
         setCart([]);
-        const token = document.cookie.slice(6);
+//        const token = document.cookie.slice(6);
         console.log("token",token);
         let urlConection=""
         if ((process.env.REACT_APP_BACKEND_URL) && (process.env.REACT_APP_BACKEND_URL.length) > 0
