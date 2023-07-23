@@ -4,9 +4,9 @@
     "environments": {
       "production": {
         "buildCommand": "npm install && npm run build",
-        "startCommand": "npm run start"
-      },
-      "env" :{"process.env.CI":false} 
+        "startCommand": "npm run start",
+        "process.env.CI":false 
+      }
     }
   }
   
