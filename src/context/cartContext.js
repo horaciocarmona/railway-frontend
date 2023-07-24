@@ -446,7 +446,6 @@ export default function CartProvider ({children}) {
                         console.log('realizo la compra',data)
                         if (data){    
                             emptyToCart();
-
                         } else {
                             console.log('se cancelo la compra',data)
 

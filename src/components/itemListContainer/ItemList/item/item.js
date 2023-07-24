@@ -12,7 +12,6 @@ return(
           <p> Id: {props.id}</p>
           <p> Categoria: {props.categoria}</p>
           <p> Precio: {props.precio}</p>
-          <p> Stock Inicial:  {props.stockProducto}</p>
           < Link to = {`/id/${props.id}`}>
 
           <Button>
